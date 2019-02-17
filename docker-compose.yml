@@ -20,7 +20,7 @@
 version: "3"
 services:
   mongodb:
-    image: "mongo"
+    image: mongo
     ports:
       - "27017:27017"
     environment:
@@ -28,6 +28,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: shadan123
   backend:
     build: .././favouritrbtn
+    image: shadan/backend
     ports:
       - "5000:5000"
     volumes:
@@ -36,6 +37,7 @@ services:
       - mongodb
   frontend:
     build: ./client
+    image: shadan/frontend
     ports:
       - "3000:3000"
     volumes:
