@@ -1,5 +1,5 @@
 {
-  "name": "landing-backend",
+  "name": "mytinerary",
   "version": "1.0.0",
   "description": "mytinarary app built with mern stack",
   "main": "server.js",
