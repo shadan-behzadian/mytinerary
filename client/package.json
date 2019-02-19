@@ -23,6 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "host": "https://warm-sands-59791.herokuapp.com/",
   "eslintConfig": {
     "extends": "react-app"
   },
