@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://salty-anchorage-19284.herokuapp.com",
+  "proxy": "https://salty-anchorage-19284.herokuapp.com",
   "eslintConfig": {
     "extends": "react-app"
   },
