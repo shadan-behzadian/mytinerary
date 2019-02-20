@@ -61,7 +61,7 @@ const port = process.env.PORT || 5000;
 // app.listen(port, () => console.log(`server started on port  ${port}`));
 
 //Static file declaration
-app.use(express.static(__dirname));
+app.use(express.static(__dirname + "/public"));
 
 // //production mode
 // if (process.env.NODE_ENV === "production") {
