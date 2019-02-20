@@ -76,6 +76,10 @@ app.use(express.static(__dirname + "/public"));
 //   res.sendFile(path.join(__dirname + "/client/public/index.html"));
 // });
 
+app.get("/", function(req, res) {
+  res.render("index");
+});
+
 //start server
 app.listen(port, (req, res) => {
   console.log(`server listening on port: ${port}`);
