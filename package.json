@@ -1,10 +1,16 @@
 {
   "name": "mytinerary",
+  "jest": {
+    "verbose": true
+  },
   "version": "1.0.0",
   "description": "mytinarary app built with mern stack",
   "main": "server.js",
   "dependencies": {
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
     "axios": "^0.18.0",
+    "babel-jest": "^24.1.0",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
@@ -16,6 +22,7 @@
     "multer": "^1.4.1",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "react-test-renderer": "^16.8.2",
     "react-toggle-display": "^2.2.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.5"
@@ -30,7 +37,8 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "jest"
+    "test": "jest",
+    "testwatch": "jest --watchAll"
   },
   "author": "shadan behzadian",
   "license": "ISC"

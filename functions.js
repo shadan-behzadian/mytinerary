@@ -13,7 +13,10 @@ const functions = {
     axios
       .get("https://jsonplaceholder.typicode.com/users/1")
       .then(res => res.data)
-      .catch(err => "error")
+      .catch(err => "error"),
+  total: (shipping, subtotal) => {
+    return "$" + functions.add(shipping, subtotal);
+  }
 };
 
 module.exports = functions;

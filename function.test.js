@@ -1,5 +1,30 @@
 const functions = require("./functions");
 
+// beforeEach(() => initDatabase());
+// afterEach(() => closedDatabase());
+
+beforeAll(() => initDatabase());
+afterAll(() => closedDatabase());
+
+const nameCheck = () => console.log("checking name ...");
+
+describe("checking names", () => {
+  beforeEach(() => nameCheck());
+
+  test("User is jeff", () => {
+    const user = "jeff";
+    expect(user).toBe("jeff");
+  });
+
+  test("User is karen", () => {
+    const user = "karen";
+    expect(user).toBe("karen");
+  });
+});
+
+const initDatabase = () => console.log("database is initialized");
+const closedDatabase = () => console.log("database is closed");
+
 test("Adds 2 + 2 to equal 4", () => {
   expect(functions.add(2, 2)).toBe(4);
 });
@@ -81,4 +106,21 @@ test("user fetchedname should be Leanne Graham", async () => {
   expect.assertions(1);
   const data = await functions.fetchUser();
   expect(data.name).toEqual("Leanne Graham");
+});
+
+//integeration testing it is using a function that is dependent on another function
+test("total", () => {
+  expect(functions.total(5, 20)).toBe("$25");
+});
+
+//mock functions
+//making a fake function that we are sure that it works 100% to check wether somthing is working
+//for example clickinh a button
+const add = jest.fn(() => 3);
+
+test("adding", () => {
+  expect(add(1, 2)).toBe(3);
+  // expect(add(6, 5)).toBe(3);
+  expect(add).toHaveBeenCalledTimes(1);
+  expect(add).toHaveBeenCalledWith(1, 2);
 });
