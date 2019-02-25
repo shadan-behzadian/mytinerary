@@ -13,6 +13,7 @@ const app = express();
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 const profile = require("./routes/api/profile");
+const path = require("path");
 
 const passportSetUp = require("./routes/api/passport");
 
@@ -60,34 +61,28 @@ const port = process.env.PORT || 5000;
 //you did not writ '${port}' you wrote `${port}` be aware of commias
 // app.listen(port, () => console.log(`server started on port  ${port}`));
 
-
 //start server
 // app.listen(port, (req, res) => {
 //   console.log(`server listening on port: ${port}`);
 // });
 
-
-
-
 //Static file declaration
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 //production mode
-if(process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client/build")));
   //
-  app.get('*', (req, res) => {
-    res.sendfile(path.join(__dirname = 'client/build/index.html'));
-  })
+  app.get("*", (req, res) => {
+    res.sendfile(path.join((__dirname = "client/build/index.html")));
+  });
 }
 //build mode
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/public/index.html'));
-})
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/public/index.html"));
+});
 
 //start server
 app.listen(port, (req, res) => {
-  console.log( `server listening on port: ${port}`);
-})
-
-
+  console.log(`server listening on port: ${port}`);
+});
