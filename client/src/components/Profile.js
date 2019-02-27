@@ -42,6 +42,7 @@ class Profile extends Component {
         </div>
 
         <Link to="/fav">my likes</Link>
+        <Link to="/admin"> admin pannel</Link>
       </div>
     );
   }

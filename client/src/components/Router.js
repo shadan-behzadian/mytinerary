@@ -11,6 +11,7 @@ import Itinerary from "./Itinerary";
 import Activities from "./Activities";
 import Fav from "./Favourites";
 import Profile from "./Profile";
+import Admin from "./Admin";
 
 class Router extends Component {
   render() {
@@ -24,6 +25,7 @@ class Router extends Component {
         <Route path="/activities/:activitytitle" component={Activities} />
         <Route path="/profile" component={Profile} />
         <Route path="/fav" component={Fav} />
+        <Route path="/admin" component={Admin} />
         <Route component={Notfound} />
       </Switch>
     );
