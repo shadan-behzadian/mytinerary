@@ -53,3 +53,16 @@ export function itineraryInfoByCityName(city) {
 //     dispatch({ type: "GET_FAV", favitineraries: fav });
 //   };
 // }
+
+export function removeItinerary(itineraryToDelete) {
+  return dispatch => {
+    axios
+      .delete(`/api/itineraries/${itineraryToDelete}`, {
+        withCredentials: true,
+        headers: { Authorization: localStorage.getItem("token") }
+      })
+      .then(res => {
+        console.log(res.data);
+      });
+  };
+}

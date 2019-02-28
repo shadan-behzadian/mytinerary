@@ -63,6 +63,16 @@ router.post("/fav", (req, res, next) => {
   }
 });
 
+router.delete("/:id", (req, res) => {
+  Itinerary.findById(req.params.id)
+    .then(itinerary =>
+      itinerary
+        .remove({ _id: req.params.id })
+        .then(() => res.json({ success: true }))
+    )
+    .catch(err => res.status(404).json({ success: false }));
+});
+
 //to post an image
 
 // router.post("/", upload.single("userimage"), (req, res) => {

@@ -46,7 +46,9 @@ class AllCities extends Component {
         <div>
           {filteredCities.map(city => (
             <Link to={`/itineraries/${city.city}`} key={city.city}>
-              <p className="cityPage">{city.city}</p>
+              <p className="cityPagemain" id={city._id}>
+                {city.city}
+              </p>
             </Link>
           ))}
         </div>

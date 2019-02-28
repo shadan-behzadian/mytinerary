@@ -12,6 +12,9 @@ import Activities from "./Activities";
 import Fav from "./Favourites";
 import Profile from "./Profile";
 import Admin from "./Admin";
+import CityAdmin from "./CityAdmin";
+import MytieraryAdmin from "./MytineraryAdmin";
+import EachMytinerary from "./EachMytinerary";
 
 class Router extends Component {
   render() {
@@ -22,10 +25,13 @@ class Router extends Component {
         <Route path="/SignUp" component={SignUp} />
         <Route path="/AllCities" component={AllCities} />
         <Route path="/itineraries/:city" component={Itinerary} />
+        <Route path="/itinerariesAdmin/:city" component={EachMytinerary} />
         <Route path="/activities/:activitytitle" component={Activities} />
         <Route path="/profile" component={Profile} />
         <Route path="/fav" component={Fav} />
         <Route path="/admin" component={Admin} />
+        <Route path="/cityAdmin" component={CityAdmin} />
+        <Route path="/mytineraryAdmin" component={MytieraryAdmin} />
         <Route component={Notfound} />
       </Switch>
     );

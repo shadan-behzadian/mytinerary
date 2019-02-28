@@ -127,13 +127,65 @@ header {
 
 .cityPage {
   width: 50%;
-
+  display: inline-block;
   margin: auto;
   border-style: groove;
 }
 
+.cityPagemain {
+  width: 50%;
+  margin: auto;
+  border-style: groove;
+}
+
+.removeBtn {
+  display: inline-block;
+}
 .profilePic {
   width: 8%;
   height: 8%;
   border-radius: 100%;
+}
+
+.cityAdmin {
+  font-size: 100%;
+  text-align: center;
+}
+
+.removeCityPage {
+  margin: auto;
+}
+
+/* .removeCity {
+  width: 50%;
+  border-style: groove;
+} */
+
+.disabled-link {
+  pointer-events: none;
+}
+
+.EachMytinerary {
+  display: flex;
+  margin: auto;
+  width: 50%;
+  border-style: dotted;
+  margin-bottom: 10px;
+}
+
+.profileNavBar {
+  width: 100%;
+  height: 300px;
+}
+
+.profileButton {
+  width: 27%;
+  height: 60%;
+  border-style: outset;
+  font-size: x-large;
+  border-radius: 33px;
+}
+
+.space {
+  margin-right: 10px;
 }

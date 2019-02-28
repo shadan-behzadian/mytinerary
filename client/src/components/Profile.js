@@ -34,15 +34,20 @@ class Profile extends Component {
     console.log(this.props.users);
     return (
       <div className="Profile">
-        <p>welcome to your profile </p>
+        <p>your profile </p>
 
         <div>
-          <p>Name :{this.props.users.name}</p>
-          <p>email :{this.props.users.email}</p>
+          <p>you are logged in as :{this.props.users.name}</p>
         </div>
 
-        <Link to="/fav">my likes</Link>
-        <Link to="/admin"> admin pannel</Link>
+        <div className="profileNavBar">
+          <Link to="/fav" className="space">
+            <button className="profileButton"> My likes</button>
+          </Link>
+          <Link to="/admin" className="space">
+            <button className="profileButton"> Admin</button>
+          </Link>
+        </div>
       </div>
     );
   }
