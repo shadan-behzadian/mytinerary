@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const path = require('path');
 
 const items = require("./routes/api/items");
 const cities = require("./routes/api/cities");
@@ -46,6 +47,7 @@ mongoose
 
 //use routes
 
+app.use('/', express.static(path.join(__dirname, 'client/build')));
 app.use("/api/items", items);
 app.use("/api/cities", cities);
 app.use("/api/itineraries", itineraries);
