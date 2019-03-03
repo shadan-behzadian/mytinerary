@@ -40,10 +40,7 @@ const db = require("./config/keys").mongoURI;
 //connect to mongo
 
 mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true, useCreateIndex: true }
-  )
+  .connect(db, { useNewUrlParser: true, useCreateIndex: true })
   .then(() => console.log("MongoDB connected..."))
   .catch(err => console.log(err));
 
