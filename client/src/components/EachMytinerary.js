@@ -11,7 +11,14 @@ class EachMytinerary extends Component {
     itineraries: [],
     selectedItinerary: "",
     favBtnSelected: "",
-    currentUserId: ""
+    currentUserId: "",
+    city: null,
+    title: null,
+    profilepic: null,
+    rating: null,
+    price: null,
+    duration: null,
+    hashtag: null
   };
 
   componentDidMount() {
@@ -30,6 +37,56 @@ class EachMytinerary extends Component {
       this.props.removeItinerary(itineraryToDelete);
     }
   };
+
+  handleChange = e => {
+    this.setState({
+      city: this.refs.city.value,
+      title: this.refs.title.value,
+      profilepic: this.refs.profilepic.value,
+      rating: this.refs.rating.value,
+      price: this.refs.price.value,
+      duration: this.refs.duration.value,
+      hashtag: this.refs.hashtag.value
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const newMytinerary = {
+      city: this.state.city,
+      title: this.state.title,
+      profilepic: this.state.profilepic,
+      rating: this.state.rating,
+      price: this.state.price,
+      duration: this.state.duration,
+      hashtag: this.state.hashtag
+    };
+
+    this.refs.city.value = "";
+    this.refs.title.value = "";
+    this.refs.profilepic.value = "";
+    this.refs.rating.value = "";
+    this.refs.price.value = "";
+    this.refs.duration.value = "";
+    this.refs.hashtag.value = "";
+
+    console.log(newMytinerary);
+
+    axios
+      .post(
+        `/api/itineraries/addMytinerary`,
+        { newMytinerary },
+        {
+          withCredentials: true,
+          headers: { Authorization: localStorage.getItem("token") }
+        }
+      )
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      });
+  };
+
   render() {
     return (
       <div className="Itinerary">
@@ -67,6 +124,66 @@ class EachMytinerary extends Component {
             </div>
           </div>
         ))}
+
+        <form onSubmit={this.handleSubmit} className="mytineraryForm">
+          <input
+            type="text"
+            required
+            ref="city"
+            placeholder="city"
+            readOnly
+            value={this.props.match.params.city}
+          />
+          <input
+            type="text"
+            required
+            ref="title"
+            placeholder="title"
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            required
+            ref="profilepic"
+            placeholder="profilepic"
+            onChange={this.handleChange}
+          />
+
+          <input
+            type="number"
+            required
+            ref="rating"
+            placeholder="0"
+            readOnly
+            value={0}
+          />
+
+          <input
+            type="text"
+            required
+            ref="price"
+            placeholder="price"
+            onChange={this.handleChange}
+          />
+
+          <input
+            type="text"
+            required
+            ref="duration"
+            placeholder="duration in minutes"
+            onChange={this.handleChange}
+          />
+
+          <input
+            type="text"
+            required
+            ref="hashtag"
+            placeholder="hashtag"
+            onChange={this.handleChange}
+          />
+
+          <input type="submit" value="save" className="submitBtn" />
+        </form>
       </div>
     );
   }

@@ -3,6 +3,7 @@ const router = express.Router();
 //const multer = require("multer");
 //const upload = multer({ des: "uploads/" });
 //const checkAuth = require("./middleware/check-auth");
+const checkAuth = require("./middleware/check-auth");
 
 //Item model
 
@@ -41,15 +42,29 @@ router.get("/:city", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+// router.post("/", (req, res) => {
+//   const newItinerary = new Itinerary({
+//     city: req.body.city,
+//     title: req.body.title,
+//     profilePic: req.body.profilePic,
+//     rating: req.body.rating,
+//     duration: req.body.duration,
+//     price: req.body.price,
+//     hashtag: req.body.hashtag
+//   });
+
+//   newItinerary.save().then(itinerary => res.json(itinerary));
+// });
+
+router.post("/addMytinerary", checkAuth, (req, res) => {
   const newItinerary = new Itinerary({
-    city: req.body.city,
-    title: req.body.title,
-    profilePic: req.body.profilePic,
-    rating: req.body.rating,
-    duration: req.body.duration,
-    price: req.body.price,
-    hashtag: req.body.hashtag
+    city: req.body.newMytinerary.city,
+    title: req.body.newMytinerary.title,
+    profilePic: req.body.newMytinerary.profilePic,
+    rating: req.body.newMytinerary.rating,
+    duration: req.body.newMytinerary.duration,
+    price: req.body.newMytinerary.price,
+    hashtag: req.body.newMytinerary.hashtag
   });
 
   newItinerary.save().then(itinerary => res.json(itinerary));

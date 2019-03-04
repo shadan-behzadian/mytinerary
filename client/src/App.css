@@ -189,3 +189,14 @@ header {
 .space {
   margin-right: 10px;
 }
+
+.mytineraryForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.mytineraryForm input {
+  width: 40%;
+  margin: auto;
+  margin-bottom: 5px;
+}
