@@ -1,4 +1,4 @@
-exports.module = {
-  setupFiles: ["<rootDir>/tests/setup.js"],
-  transformIgnorePatterns: ["<rootDir>/node_modules/"]
+module.exports = {
+  setupFiles: ["<rootDir>/setup.js"],
+  testPathIgnorePatterns: ["/node_modules/"]
 };
