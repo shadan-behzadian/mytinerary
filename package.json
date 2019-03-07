@@ -4,8 +4,10 @@
   "description": "mytinarary app built with mern stack",
   "main": "server.js",
   "dependencies": {
+    "@babel/preset-flow": "^7.0.0",
     "@babel/runtime": "^7.3.4",
     "axios": "^0.18.0",
+    "babel-plugin-styled-components": "^1.10.0",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
