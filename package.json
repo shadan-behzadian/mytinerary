@@ -1,12 +1,9 @@
 {
-  "name": "mytinerary",
+  "name": "mytinerarybackend",
   "version": "1.0.0",
   "description": "mytinarary app built with mern stack",
   "main": "server.js",
   "dependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.3.4",
     "axios": "^0.18.0",
     "bcrypt": "^3.0.4",
@@ -26,7 +23,7 @@
     "redux-devtools-extension": "^2.13.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.0.0-beta.40",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
     "@babel/plugin-proposal-throw-expressions": "^7.0.0",
@@ -36,7 +33,7 @@
     "@babel/preset-env": "^7.0.0-beta.51",
     "@babel/preset-react": "^7.0.0-beta.51",
     "babel-jest": "^24.1.0",
-    "babel-loader": "^8.0.0-beta.0",
+    "babel-loader": "^7.1.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-airbnb": "^3.2.0",
