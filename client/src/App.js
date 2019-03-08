@@ -15,6 +15,7 @@ class App extends Component {
           <Header />
           <Router />
           <Footer />
+          <div>hi</div>
         </div>
       </BrowserRouter>
     );
