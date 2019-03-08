@@ -4,7 +4,7 @@ const styles = {
   heading: {
     color: "#fff",
     textAlign: "center",
-    marginBottom: theme.margin * 2
+    marginBottom: ''
   },
   logo: {
     width: 250,
