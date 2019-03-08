@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const path = require('path');
 
 const items = require("./routes/api/items");
 const cities = require("./routes/api/cities");
@@ -40,15 +41,13 @@ const db = require("./config/keys").mongoURI;
 //connect to mongo
 
 mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true, useCreateIndex: true }
-  )
+  .connect(db, { useNewUrlParser: true, useCreateIndex: true })
   .then(() => console.log("MongoDB connected..."))
   .catch(err => console.log(err));
 
 //use routes
 
+app.use('/', express.static(path.join(__dirname, 'client/build')));
 app.use("/api/items", items);
 app.use("/api/cities", cities);
 app.use("/api/itineraries", itineraries);
